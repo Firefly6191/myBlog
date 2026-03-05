@@ -6,8 +6,16 @@ const postsCollection = defineCollection({
 	loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/posts" }),
 	schema: z.object({
 		title: z.string(),
-		published: z.date(),
-		updated: z.date().optional(),
+		// 【修改处】兼容字符串和日期，并强制转换为 Date 对象
+		published: z
+			.union([z.date(), z.string()])
+			.transform((val) => new Date(val)),
+		
+		updated: z
+			.union([z.date(), z.string()])
+			.transform((val) => new Date(val))
+			.optional(),
+			
 		draft: z.boolean().optional().default(false),
 		description: z.string().optional().default(""),
 		image: z.string().optional().default(""),
