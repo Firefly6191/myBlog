@@ -11,3 +11,4 @@ image: ./images/firefly2.avif
 ## 🌟 项目概述
 
 **测试文章**测试123456 
+![测试图片](./images/fly.jpg)
