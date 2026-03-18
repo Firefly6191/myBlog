@@ -2,7 +2,7 @@
 title: 我的第一篇文章
 published: 2026-03-18
 description: 这是文章的简短描述
-image: \assets\images\cover.avif
+image: ./images/firefly2.avif
 tags: [测试]
 category: 前端开发
 draft: false
